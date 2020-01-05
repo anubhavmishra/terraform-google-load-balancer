@@ -15,6 +15,7 @@ terraform {
 resource "google_compute_forwarding_rule" "default" {
   provider              = google-beta
   project               = var.project
+  region                = var.region
   name                  = var.name
   target                = google_compute_target_pool.default.self_link
   load_balancing_scheme = "EXTERNAL"
